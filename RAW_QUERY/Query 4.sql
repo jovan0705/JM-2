@@ -21,7 +21,7 @@ ed.level,
       THEN CASE 
           WHEN COUNT(CASE WHEN ef.relation_status = 'Suami' THEN 1 END) > 0 OR COUNT(CASE WHEN ef.relation_status = 'Istri' THEN 1 END) > 0 THEN ' & ' 
           ELSE '' 
-        END || COUNT(CASE WHEN ef.relation_status = 'Anak' THEN 1 END) || ' Anak ' 
+        END || COUNT(CASE WHEN ef.relation_status = 'Anak' THEN 1 END) || ' Anak' 
       ELSE '' 
     END,
     CASE 

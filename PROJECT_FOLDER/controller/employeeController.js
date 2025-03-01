@@ -333,7 +333,7 @@ const employeeReport = async (req, res, next) => {
             THEN CASE 
                 WHEN COUNT(CASE WHEN ef.relation_status = 'Suami' THEN 1 END) > 0 OR COUNT(CASE WHEN ef.relation_status = 'Istri' THEN 1 END) > 0 THEN ' & ' 
                 ELSE '' 
-                END || COUNT(CASE WHEN ef.relation_status = 'Anak' THEN 1 END) || ' Anak ' 
+                END || COUNT(CASE WHEN ef.relation_status = 'Anak' THEN 1 END) || ' Anak' 
             ELSE '' 
             END,
             CASE 
@@ -367,12 +367,6 @@ const employeeReport = async (req, res, next) => {
     next(error);
   }
 };
-
-// Get One Employee (with all relation to profile, family & education)
-// o Create Employee and it’s profile, family, & education
-// o Update Employee and it’s profile, family & education
-// o Delete Employee
-// o Report Employee data (format laporan seperti soal nomor 4)
 
 module.exports = {
   getAllEmployee,
